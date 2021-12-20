@@ -1,68 +1,144 @@
 <doctype! html>
   <html>
     <head>
-	<title>Descripcion de Vehiculos</title>
-    <script src="https://kit.fontawesome.com/55dba967ba.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/55dba967ba.js" crossorigin="anonymous">
+    </script>
     </head>
-  <h2>Lista de Vehiculos</h2>
+<style>
+        h2{
+          text-align:;
+          }
+        .fullCard {
+         border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px 5px;
+        padding: 4px;
+        }
+        .cardContent {
+        padding: 10px;
+        }
+        body{
+          background-color:#F0F9FF;
+        }
+        .thin-black-border {
+        border-color: black;
+        border-width: 3px;
+        border-style: solid;
+        }
+        .lightblue-background{
+        background-color: #C5E4F6;
+        }
+        .button {
+        border-radius: 3px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        }
+        .button2{
+          border-radius:15px;
+          cursor:pointer;
+        }   
+        .button1:hover {
+        background-color: grey;
+        color: white;
+        }
+         .popup {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
 
- <p><input type="text" placeholder="Buscar" required>
-<button>Buscar</button></p>
-<p align="center"> <button> Nuevo </button></p>
-<table border default="">
-<tbody>
-<tr>
-<th>Tipo</th>
-<th>Modelo</th>
-<th>Marca</th>
-<th>Color</th>
-<th>Precio</th>
-<th>Stock</th>
-<th>Accion</th>
-</tr>
-<tr>
-<th></th>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><button><i class="fas fa-exclamation"></i> </button> <button> <i class="fas fa-times"></i> </button></td>
-</tr>
-<tr>
-<th></th>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><button><i class="fas fa-exclamation"></i> </button> <button> <i class="fas fa-times"></i> </button></td>
-</tr>
-<tr>
-<th></th>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><button><i class="fas fa-exclamation"></i> </button> <button> <i class="fas fa-times"></i> </button></td>
-</tr>
-<tr>
-<th></th>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><button><i class="fas fa-exclamation"></i> </button> <button> <i class="fas fa-times"></i> </button></td>
-</tr>
-<tr>
-<th></th>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><button><i class="fas fa-exclamation"></i> </button> <button> <i class="fas fa-times"></i> </button></td>
-</tr>
+    .popup .popuptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: grey;
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -80px;
+    }
+
+    .popup .popuptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+    .popup .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s
+    }
+
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <script>
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+  </script>
+<div class="fullcard">
+  <div class="cardcontent">
+    <h2 style="color:">Lista de Vehiculos</h2>
+      <p><input type="text" placeholder="Buscar" required>
+      <button title="Buscar">Buscar</button></p>
+      <p align="center"> 
+        <button type="button" title="Nuevo" class="button button1" style="color:red"> Nuevo </button></p>
+      <table class="thin-black-border" border>
+    <tbody>
+    <tr>
+    <th>Tipo</th>
+    <th>Modelo</th>
+    <th>Marca</th>
+    <th>Color</th>
+    <th>Precio</th>
+    <th>Stock</th>
+    <th>Accion</th>
+    </tr>
+    <tr>
+    <th></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><button class="button2" title="Editar"><i class="fas fa-edit"></i></button> 
+    <div class="popup" onclick="myFunction()"><button class="button2"><i class="fas fa-eye"></button></i>
+  <span class="popuptext" id="myPopup">Descripcion del Vehiculo:</span>
+</div>
+    <button class="button2" title="Eliminar"><i class="fas fa-trash-alt"></i></button></td>
+    </tr>
+  </div>
+</div>
 </html>
